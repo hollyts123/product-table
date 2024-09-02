@@ -23,6 +23,19 @@ const TableRow: React.FC<TableRowProps> = ({
     paymentMode,
     status
 }) => {
+    const getStatusClass = (status: string) => {
+        switch (status) {
+            case 'Delivered':
+                return 'bg-[var(--status-delivered-bg)] text[var(--status-delivered-text)] py-3 px-4 rounded-3xl';
+            case 'Process':
+                return 'bg-[var(--status-process-bg)] text[var(--status-process-text)] py-3 px-4 rounded-3xl';
+            case 'Cancelled':
+                return 'bg-[var(--status-canceled-bg)] text[var(--status-canceled-text)] py-3 px-4 rounded-3xl';
+            default:
+                return 'bg-[var(--status-delivered-bg)] text[var(--status-delivered-text)] py-3 px-4 rounded-3xl';
+        }
+    };
+
     const formattedDate = new Intl.DateTimeFormat('en-GB').format(new Date(date));
 
     return (
@@ -42,7 +55,7 @@ const TableRow: React.FC<TableRowProps> = ({
             <td className="py-4 pr-12">{formattedDate}</td>
             <td className="py-4 pr-12">${amount}</td>
             <td className="py-4 pr-6">{paymentMode}</td>
-            <td className="py-4 pr-14">{status}</td>
+            <td className="py-4 pr-14"><span className={`${getStatusClass(status)}`}>{status}</span></td>
             <td className="py-4 pr-10">
                 <div>
                     <button className="mr-4">

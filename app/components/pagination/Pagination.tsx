@@ -28,7 +28,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, numberOfPages, onP
                 {getPageNumbers().map((pageNumber) => (
                     <button
                         key={pageNumber}
-                        className={`mx-1 border rounded-lg w-8 h-8 font-montserrat ${pageNumber === currentPage ? 'bg-[var(--btn-bg)] text-white' : 'bg-[var(--show-entries-light)]'}`}
+                        className={`mx-1 border rounded-lg w-8 h-8 text-sm ${pageNumber === currentPage ? 'bg-[var(--btn-bg)] text-white' : 'bg-[var(--show-entries-light)]'}`}
                         onClick={() => onPageChange(pageNumber)}
                     >
                         {pageNumber}
