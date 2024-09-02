@@ -1,54 +1,4 @@
-// 'use client';
-// import tableRowStyles from './TableRow.module.css';
-
-// interface TableRowProps {
-//     className?: string;
-//     trackingId: number;
-//     productName: string;
-//     productImage: string;
-//     customer: string;
-//     date: string;
-//     amount: number;
-//     paymentMode: string;
-//     status: string;
-// }
-
-// const TableRow: React.FC<TableRowProps> = ({ className, trackingId, productName, productImage, customer, date, amount, paymentMode, status }) => {
-//     const formattedDate = new Intl.DateTimeFormat('en-GB').format(new Date(date));
-
-//     return (
-//             <tr className={`flex justify-between items-center `}>
-//                 <td>#{trackingId}</td>
-//                 <td >
-//                     <div className={`flex justify-start items-center ${tableRowStyles['product-info-wrap']}`}>
-//                         <img src={productImage} />
-//                         <p>{productName}</p>
-//                     </div>
-//                 </td>
-//                 <td>{customer}</td>
-//                 <td>{formattedDate}</td>
-//                 <td>${amount}</td>
-//                 <td>{paymentMode}</td>
-//                 <td>{status}</td>
-//                 <td>
-//                     <div className={tableRowStyles.btns}>
-//                         <button>
-//                             <img src='/tableRow/edit.svg' />
-//                         </button>
-//                         <button>
-//                             <img src='/tableRow/trash.svg' />
-//                         </button>
-//                     </div>
-//                 </td>
-//             </tr>
-//     );
-// }
-
-// export default TableRow;
-
-
 'use client';
-import tableRowStyles from './TableRow.module.css';
 
 interface TableRowProps {
     className?: string;
@@ -76,7 +26,7 @@ const TableRow: React.FC<TableRowProps> = ({
     const formattedDate = new Intl.DateTimeFormat('en-GB').format(new Date(date));
 
     return (
-        <tr className={`${className} ${tableRowStyles['table-row']} odd:bg-[var(--bg-light-gray)]`}>
+        <tr className={`${className} odd:bg-[var(--bg-light-gray)]`}>
             <td className="py-4 pl-10">
                 <div className="flex flex-col items-start">
                     <span>#{trackingId}</span>
