@@ -26,20 +26,20 @@ const TableRow: React.FC<TableRowProps> = ({
     const getStatusClass = (status: string) => {
         switch (status) {
             case 'Delivered':
-                return 'bg-[var(--status-delivered-bg)] text[var(--status-delivered-text)] py-3 px-4 rounded-3xl';
+                return 'bg-[var(--status-delivered-bg)] text-[var(--status-delivered-text)] py-3 px-4 rounded-3xl';
             case 'Process':
-                return 'bg-[var(--status-process-bg)] text[var(--status-process-text)] py-3 px-4 rounded-3xl';
+                return 'bg-[var(--status-process-bg)] text-[var(--status-process-text)] py-3 px-4 rounded-3xl';
             case 'Cancelled':
-                return 'bg-[var(--status-canceled-bg)] text[var(--status-canceled-text)] py-3 px-4 rounded-3xl';
+                return 'bg-[var(--status-canceled-bg)] text-[var(--status-canceled-text)] py-3 px-4 rounded-3xl';
             default:
-                return 'bg-[var(--status-delivered-bg)] text[var(--status-delivered-text)] py-3 px-4 rounded-3xl';
+                return 'bg-[var(--status-delivered-bg)] text-[var(--status-delivered-text)] py-3 px-4 rounded-3xl';
         }
     };
 
     const formattedDate = new Intl.DateTimeFormat('en-GB').format(new Date(date));
 
     return (
-        <tr className={`${className} odd:bg-[var(--bg-light-gray)]`}>
+        <tr className={`${className} odd:bg-[var(--bg-light-gray)] dark:odd:bg-[var(--bg-light-blue)] dark:text-[var(--text-light)]`}>
             <td className="py-4 pl-10">
                 <div className="flex flex-col items-start">
                     <span>#{trackingId}</span>

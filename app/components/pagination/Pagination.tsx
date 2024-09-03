@@ -18,7 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, numberOfPages, onP
         <div className={className}>
             <div className="flex flex-row justify-center items-center gap-2">
                 <button
-                    className={`px-4 py-2 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''}`}
+                    className={`px-4 py-2 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''} dark:text-[var(--text-light)]`}
                     onClick={() => onPageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                 >
@@ -28,7 +28,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, numberOfPages, onP
                 {getPageNumbers().map((pageNumber) => (
                     <button
                         key={pageNumber}
-                        className={`mx-1 border rounded-lg w-8 h-8 text-sm ${pageNumber === currentPage ? 'bg-[var(--btn-bg)] text-white' : 'bg-[var(--show-entries-light)]'}`}
+                        className={`mx-1 rounded-lg w-8 h-8 text-sm ${pageNumber === currentPage ? 'bg-[var(--btn-bg)] text-white' : 'bg-[var(--show-entries-light)] dark:bg-[var(--show-entries-dark)] dark:text-[var(--text-light)]'}`}
                         onClick={() => onPageChange(pageNumber)}
                     >
                         {pageNumber}
@@ -36,7 +36,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, numberOfPages, onP
                 ))}
 
                 <button
-                    className={`px-4 py-2 ${currentPage === numberOfPages ? 'cursor-not-allowed opacity-50' : ''}`}
+                    className={`px-4 py-2 ${currentPage === numberOfPages ? 'cursor-not-allowed opacity-50' : ''} dark:text-[var(--text-light)]`}
                     onClick={() => onPageChange(currentPage + 1)}
                     disabled={currentPage === numberOfPages}
                 >

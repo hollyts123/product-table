@@ -33,7 +33,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ className }) => {
             />
 
             {/* Table */}
-            <table className='w-full'>
+            <table className='w-full dark:text-[var(--text-light)]'>
                 <thead>
                     <tr>
                         <th className="py-3 pl-7">Tracking ID</th>
@@ -92,7 +92,7 @@ const ProductTable: React.FC<ProductTableProps> = ({ className }) => {
                 currentPage={currentPage}
                 numberOfPages={numberOfPages}
                 onPageChange={handlePageChange}
-                className={`my-8`}
+                className={`py-8`}
             />
         </div>
     );

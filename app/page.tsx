@@ -3,7 +3,7 @@ import ProductTable from "./components/productTable/ProductTable";
 
 export default function Home() {
   return (
-    <main>
+    <main className="dark:bg-[var(--bg-dark-blue)]">
       <ProductTable />       
     </main>
   );
